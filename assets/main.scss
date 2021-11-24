@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -5,4 +7,80 @@
     a {
         color: hsl(228, 45%, 44%);
     }
+}
+
+body {
+    background-color: #C5E4E7;
+}
+
+span,
+label,
+p {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+input {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 17px;
+    border: solid 2px #26C2AE;
+    border-radius: 5px;
+    text-align: right;
+    background-color: #F3F9FA;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35.54px;
+    color: #00474B;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: block;
+    margin: 163px auto 88px auto;
+}
+
+.container {
+    max-width: 920px;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 25px;
+    padding: 45px 32px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+.col-input {
+    max-width: 380px;
+    label {
+        font-size: 16px;
+        line-height: 23.7px;
+        color: #5E7A7D;
+        margin-bottom: 6px;
+        display: block;
+    }
+}
+
+.input-wrapper {
+    input {
+        width: 100%;
+    }
+}
+
+.btn-wrapper {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 16px;
+}
+
+.tip-wrapper {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.col-display {
+    background-color: #00474B;
+    border-radius: 15px;
 }

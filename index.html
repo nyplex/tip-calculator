@@ -12,7 +12,52 @@
 </head>
 
 <body>
-
+  <img src="assets/images/logo.svg" alt="Logo" class="logo">
+  <div class="container">
+    <div class="col col-input">
+      <div class="input-wrapper">
+        <label for="bill">Bill</label>
+        <div class="input">
+          <input type="text" value="142.55" id="bill">
+        </div>
+      </div>
+      <div class="tip-wrapper">
+        <label for="ppl">Select Tip %</label>
+        <div class="btn-wrapper">
+          <input disabled type="text">
+          <input disabled type="text">
+          <input disabled type="text">
+          <input disabled type="text">
+          <input disabled type="text">
+          <input disabled type="text" value="40">
+        </div>
+      </div>
+      <div class="input-wrapper">
+        <label for="ppl">Number of People</label>
+        <div class="input">
+          <input type="text" value="0" id="ppl">
+        </div>
+        <label for="ppl">Can't be zero</label>
+      </div>
+    </div>
+    <div class="col col-display">
+      <div class="amount">
+        <div class="label">
+          <p>Tip Amount</p>
+          <span>/ person</span>
+        </div>
+        <span>$0.00</span>
+      </div>
+      <div class="total">
+        <div class="label">
+          <p>Total</p>
+          <span>/ person</span>
+        </div>
+        <span>$0.00</span>
+      </div>
+      <button>RESET</button>
+    </div>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Alex Nypels</a>.
