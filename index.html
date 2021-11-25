@@ -16,29 +16,30 @@
   <div class="container">
     <div class="col col-input">
       <div class="input-wrapper">
-        <label for="bill">Bill</label>
+        <label for="total-bill">Bill</label>
         <div class="input">
-          <input type="text" value="142.55" id="bill">
+          <input type="text" value="0" id="total-bill" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
         </div>
+      </div>
+      <div class="input-wrapper people-wrapper">
+        <label for="total-people">Number of People</label>
+        <div class="input">
+          <input type="text" value="2" id="total-people" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        </div>
+        <label for="ppl">Can't be zero</label>
       </div>
       <div class="tip-wrapper">
         <label for="ppl">Select Tip %</label>
         <div class="btn-wrapper">
-          <input disabled type="text">
-          <input disabled type="text">
-          <input disabled type="text">
-          <input disabled type="text">
-          <input disabled type="text">
-          <input disabled type="text" value="40">
+          <button id="tip-5" value="5">5%</button>
+          <button id="tip-10" value="10">10%</button>
+          <button id="tip-12" value="12">12%</button>
+          <button id="tip-15" value="15">15%</button>
+          <button id="tip-20" value="20">20%</button>
+          <input class="manual-tip" type="text" value="0" id="tip-manual" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         </div>
       </div>
-      <div class="input-wrapper">
-        <label for="ppl">Number of People</label>
-        <div class="input">
-          <input type="text" value="0" id="ppl">
-        </div>
-        <label for="ppl">Can't be zero</label>
-      </div>
+      <button class="reset-btn calcul-btn">Calculate</button>
     </div>
     <div class="col col-display">
       <div class="amount">
@@ -46,16 +47,16 @@
           <p>Tip Amount</p>
           <span>/ person</span>
         </div>
-        <span>$0.00</span>
+        <span class="span-price" id="total-tip-amount">$0.00</span>
       </div>
       <div class="total">
         <div class="label">
           <p>Total</p>
           <span>/ person</span>
         </div>
-        <span>$0.00</span>
+        <span class="span-price" id="total-amount">$0.00</span>
       </div>
-      <button>RESET</button>
+      <button class="reset-btn" id="reset-button">RESET</button>
     </div>
   </div>
   <div class="attribution">

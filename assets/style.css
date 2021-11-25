@@ -47,6 +47,7 @@ input {
   padding: 45px 32px;
   display: grid;
   grid-template-columns: 50% 50%;
+  margin-bottom: 240px;
 }
 
 .col-input {
@@ -64,10 +65,49 @@ input {
   width: 100%;
 }
 
+.people-wrapper {
+  margin-top: 40px;
+}
+
 .btn-wrapper {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   gap: 16px;
+}
+.btn-wrapper button {
+  background-color: #00474B;
+  color: #fff;
+  border: none;
+  width: 100px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35.54px;
+  border-radius: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 17px;
+  box-sizing: border-box;
+  min-height: 51px;
+}
+.btn-wrapper button:hover {
+  cursor: pointer;
+}
+.btn-wrapper input {
+  background-color: #00474B;
+  color: #fff;
+  border: none;
+  width: 100px;
+}
+.btn-wrapper input:hover {
+  background-color: #9FE8DF;
+  color: #00474B;
+  cursor: pointer;
+}
+.btn-wrapper .manual-tip {
+  background-color: #fff;
+  color: #00474B;
+  border: solid 2px #26C2AE;
 }
 
 .tip-wrapper {
@@ -78,6 +118,70 @@ input {
 .col-display {
   background-color: #00474B;
   border-radius: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.amount,
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount {
+  margin-bottom: 25px;
+  margin-top: 40px;
+}
+
+.label {
+  align-self: center;
+}
+.label p {
+  margin: auto;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23.7px;
+  color: #fff;
+}
+.label span {
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  line-height: 19.25px;
+  font-weight: 700;
+  color: #7F9D9F;
+}
+
+.span-price {
+  font-family: "Space Mono", monospace;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 71.09px;
+  letter-spacing: -1px;
+  color: #26C2AE;
+}
+
+.reset-btn {
+  width: 100%;
+  margin-top: 122px;
+  background-color: #26C2AE;
+  border-radius: 5px;
+  border: none;
+  color: #00474B;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29.62px;
+  text-align: center;
+  padding: 9px 0;
+}
+.reset-btn:hover {
+  background-color: #9FE8DF;
+  cursor: pointer;
+}
+
+.calcul-btn {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
