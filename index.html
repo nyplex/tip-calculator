@@ -30,7 +30,7 @@
       </div>
       <div class="tip-wrapper">
         <label for="ppl">Select Tip %</label>
-        <div class="btn-wrapper">
+        <div class="btn-wrapper" id="tips-wrapper">
           <button id="tip-5" value="5">5%</button>
           <button id="tip-10" value="10">10%</button>
           <button id="tip-12" value="12">12%</button>
@@ -39,7 +39,7 @@
           <input class="manual-tip" type="text" value="0" id="tip-manual" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         </div>
       </div>
-      <button class="reset-btn calcul-btn">Calculate</button>
+      <button class="reset-btn calcul-btn" id="calcul-btn">Calculate</button>
     </div>
     <div class="col col-display">
       <div class="amount">
