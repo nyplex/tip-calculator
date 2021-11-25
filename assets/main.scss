@@ -105,18 +105,15 @@ input {
         color: #fff;
         border: none;
         width: 100px;
-
-        &:hover {
-            background-color: #9FE8DF;
-            color: #00474B;
-            cursor: pointer;
-        }
     }
 
     .manual-tip {
         background-color: #fff;
         color: #00474B;
         border: solid 2px #26C2AE;
+        &:focus {
+            outline: none;
+        }
     }
 }
 
@@ -195,4 +192,9 @@ input {
 
 .calcul-btn {
     margin-top: 0;
+}
+
+.tip-selected {
+    background-color: #9FE8DF !important;
+    color: #00474B !important;
 }
