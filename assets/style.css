@@ -187,4 +187,15 @@ input {
   color: #00474B !important;
 }
 
+.label-errors {
+  color: red !important;
+  min-height: 23.7px;
+}
+
+.error-tip-manual {
+  grid-column-end: 4;
+  margin-top: -17px;
+  margin-left: 3px;
+}
+
 /*# sourceMappingURL=style.css.map */
