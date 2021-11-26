@@ -5,22 +5,20 @@ const tips_button = document.querySelectorAll("#tips-wrapper > button")
 const calculate_button = document.getElementById("calcul-btn")
 const tip_manual_input = document.getElementById("tip-manual")
 
-
-
-
 //check if is a Number
-let isNumber = (number) => (typeof number !== 'number') || (number !== Number(number)) ? false : true
-//Validate an input 
-let validateInput = (value) => isNumber(value) && value != undefined && value != 0 ? true : false
+let validateInput = (value) => {
+    return typeof value !== 'number' || value !== Number(value) || value === undefined || value == NaN || value <= 0 ? false : true
+}
 //Get the Input value (Number)
 let getInputValue = (id) => {
-    let value = parseInt(document.getElementById(id).value)
-    if(validateInput(value) === false) errors.push(id)
-    else return true
+    let value = parseFloat(document.getElementById(id).value)
+    if(validateInput(value) === false) {
+        errors.push(id)
+        return false
+    }else{
+        return value
+    }
 }
-
-
-
 
 //Remove selected class on tip's buttons
 let removeTipClass = () => document.querySelectorAll('.tip-button').forEach((e) => e.classList.remove('tip-selected'));
@@ -29,11 +27,8 @@ let changeClassTips = (id) => {
     removeTipClass()
     document.getElementById(id).classList.add("tip-selected")
 }
-//get the tip value (from button)
-let getTipNumber = (id) => getInputValue(id)
 //When user click on the manuel tip input remove selected class on the tip's button
 tip_manual_input.addEventListener('click', (e) => removeTipClass())
-
 
 
 //Display the input errors
@@ -51,7 +46,19 @@ let removeErrors = () => {
     })
 }
 
-
+//get the tip's amount 
+let getTipAmount = () => {
+    buttons = document.getElementsByClassName('tip-selected')[0]
+    tipsInput = 0
+    if(buttons) {
+        tipsInput = getInputValue(buttons.id)
+        tipsInput === false ? percentageTips = 0 : percentageTips = tipsInput
+    }else {
+        tipsInput = getInputValue('tip-manual')
+        tipsInput === false ? percentageTips = 0 : percentageTips = tipsInput
+    }
+    return percentageTips
+}
 
 
 //Add event listener on each tip's button to change the selected class and get their value
@@ -59,13 +66,10 @@ tips_button.forEach(
     function(currentValue, currentIndex, listObj) {
       currentValue.addEventListener('click', (e) => {
         changeClassTips(currentValue.id)
-        percentageTips = getTipNumber(currentValue.id)
+        percentageTips = getInputValue(currentValue.id)
       })
     }
 );
-
-
-
 
 calculate_button.addEventListener('click', () => {
     //first reset all the input's errors
@@ -73,6 +77,7 @@ calculate_button.addEventListener('click', () => {
     let bill = getInputValue("total-bill")
     let people = getInputValue("total-people")
     if(errors.length > 0) displayErrors(errors);
+    console.log(getTipAmount());
 })
 
 
