@@ -18,14 +18,14 @@
       <div class="input-wrapper">
         <label>Bill</label>
         <div class="input">
-          <input type="text" value="0" id="total-bill" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+          <input type="text" value="0" id="total-bill" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10">
         </div>
         <label id="total-bill-error" class="label-errors" for="total-bill"></label>
       </div>
       <div class="input-wrapper people-wrapper">
         <label >Number of People</label>
         <div class="input">
-          <input type="text" value="2" id="total-people" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          <input type="text" value="2" id="total-people" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         </div>
         <label id="total-people-error" class="label-errors" for="total-people"></label>
       </div>
@@ -37,7 +37,7 @@
           <button id="tip-12" value="12" class="tip-button">12%</button>
           <button id="tip-15" value="15" class="tip-button">15%</button>
           <button id="tip-20" value="20" class="tip-button">20%</button>
-          <input class="manual-tip" type="text" value="0" placeholder="0" id="tip-manual" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          <input class="manual-tip" type="text" value="0" placeholder="0" id="tip-manual" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
           <label id="manual-tip-error" class="label-errors error-tip-manual" for="tip-manual"></label>
         </div>
       </div>

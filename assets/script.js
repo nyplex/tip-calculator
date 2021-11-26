@@ -4,6 +4,9 @@ let errors = [];
 const tips_button = document.querySelectorAll("#tips-wrapper > button")
 const calculate_button = document.getElementById("calcul-btn")
 const tip_manual_input = document.getElementById("tip-manual")
+const tip_span = document.getElementById("total-tip-amount")
+const total_span = document.getElementById("total-amount")
+const reset_button = document.getElementById("reset-button")
 
 //check if is a Number
 let validateInput = (value) => {
@@ -13,8 +16,13 @@ let validateInput = (value) => {
 let getInputValue = (id) => {
     let value = parseFloat(document.getElementById(id).value)
     if(validateInput(value) === false) {
-        errors.push(id)
-        return false
+        if(id !== 'tip-manual'){
+            errors.push(id)
+            return false
+        }
+        else{
+            return 0
+        }
     }else{
         return value
     }
@@ -74,13 +82,22 @@ tips_button.forEach(
 calculate_button.addEventListener('click', () => {
     //first reset all the input's errors
     removeErrors()
+    //Get the data
+    let tipsAmount = getTipAmount()
     let bill = getInputValue("total-bill")
     let people = getInputValue("total-people")
+    //Display any errors
     if(errors.length > 0) displayErrors(errors);
-    console.log(getTipAmount());
+    //calcul the tips amount per person 
+    totalTips = (bill / 100) * tipsAmount
+    let tipPerPerson = totalTips / people
+    //Calculate total per person
+    let totalBillPerPerson = bill / people + tipPerPerson
+    tip_span.innerHTML = "£ " + totalTips.toFixed(2)
+    total_span.innerHTML = "£ " + totalBillPerPerson.toFixed(2)
 })
 
-
+reset_button.addEventListener('click', () => location.reload())
 
 
 
